@@ -84,7 +84,7 @@ def load_frame2():
             if len(headlines[i]) >140:
                 headlines[i] = headlines[i][:140] + '\n' + headlines[i][140:]
             Label(new_frame, text = headlines[i], fg = 'white', bg = '#1d6950', padx =15, pady =10, font= 'Shanti 12').grid(row =i, column=0)
-            Button(new_frame, text = 'Go to Website', bg = '#28793a', padx = 5, cursor="hand2",activebackground="#badee2", activeforeground="black", command= lambda: webbrowser.open_new_tab(links[i])).grid(row =i, column=1, sticky=W)
+            Button(new_frame, text = 'Go to Website', bg = '#28793a', padx = 5, cursor="hand2",activebackground="#badee2", activeforeground="black", command= lambda i=i: webbrowser.open_new_tab(links[i])).grid(row =i, column=1, sticky=W)
     except:
          home()
          msg.showerror('Error', 'Unable to search, please check whether you have provided a search topic')
